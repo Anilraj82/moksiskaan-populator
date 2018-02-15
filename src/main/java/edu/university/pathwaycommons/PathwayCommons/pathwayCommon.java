@@ -11,6 +11,11 @@ import org.openqa.selenium.firefox.FirefoxDriverLogLevel;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.firefox.FirefoxProfile;
 
+/**
+ * This class automates the process of downloading the links present in the archive of Pathways Commons.
+ * The url link looks like  http://www.pathwaycommons.org/archives/PC2/v9/
+ * Each url link contains several links to downloadeable files. 
+ */
 public class pathwayCommon {
 	/**
 	 * 
@@ -154,9 +159,9 @@ public class pathwayCommon {
 		for (int j = 0; j < links.size(); j++) {
 			System.out.print("Now its clicking : " + (j + 1) + " ");
 			System.out.println(links.get(j).getText());
-//			links.get(j).click();
+			links.get(j).click();
 		}
-
+		//implicitely waits for 10 seconds
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		
 	}
